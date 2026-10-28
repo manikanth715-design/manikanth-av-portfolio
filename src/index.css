@@ -454,3 +454,18 @@
     animation: none !important;
   }
 }
+
+/* Unlayered so it wins over any host page reset (e.g. the claude.ai
+   page skeleton, which pins a light color-scheme on :root). */
+:root,
+html {
+  color-scheme: dark !important;
+  background-color: #000 !important;
+}
+body {
+  background-color: #000 !important;
+  color: #f5f5f7;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+}

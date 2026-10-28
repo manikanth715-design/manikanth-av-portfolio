@@ -192,7 +192,7 @@ export const experience = [
 export type ProjectType = {
   id: string
   title: string
-  glyph: 'boardroom' | 'auditorium' | 'classroom' | 'videowall' | 'control' | 'experience'
+  image: 'boardroom' | 'auditorium' | 'classroom' | 'signage' | 'control' | 'experience'
   sectors: string[]
   scope: string
   technologies: string[]
@@ -204,7 +204,7 @@ export const projectTypes: ProjectType[] = [
   {
     id: 'boardroom',
     title: 'Boardrooms & Hybrid Meeting Rooms',
-    glyph: 'boardroom',
+    image: 'boardroom',
     sectors: ['Enterprise', 'BFSI'],
     scope:
       'Microsoft Teams Rooms, Zoom Rooms and Cisco collaboration environments that unify audio, video, control and content sharing for hybrid meetings.',
@@ -213,7 +213,7 @@ export const projectTypes: ProjectType[] = [
   {
     id: 'auditorium',
     title: 'Auditoriums',
-    glyph: 'auditorium',
+    image: 'auditorium',
     sectors: ['Enterprise', 'Government', 'Education'],
     scope:
       'Large-room audio, display and control design for presentations and events, with DSP-based audio signal flow and centralised control.',
@@ -222,7 +222,7 @@ export const projectTypes: ProjectType[] = [
   {
     id: 'learning',
     title: 'Training Rooms & Classrooms',
-    glyph: 'classroom',
+    image: 'classroom',
     sectors: ['Education', 'Enterprise'],
     scope:
       'Learning spaces that combine presentation, collaboration and conferencing so local and remote participants can take part equally.',
@@ -231,7 +231,7 @@ export const projectTypes: ProjectType[] = [
   {
     id: 'signage',
     title: 'Video Walls, Active LED & Digital Signage',
-    glyph: 'videowall',
+    image: 'signage',
     sectors: ['Enterprise', 'Healthcare'],
     scope:
       'Video wall and direct-view LED display design alongside digital signage deployments for corporate and public-facing spaces.',
@@ -240,7 +240,7 @@ export const projectTypes: ProjectType[] = [
   {
     id: 'control',
     title: 'Command & Control Centres',
-    glyph: 'control',
+    image: 'control',
     sectors: ['Government', 'Defence', 'Enterprise'],
     scope:
       'Operator-focused environments with multi-source visualisation, signal distribution and control for monitoring and decision-making.',
@@ -249,7 +249,7 @@ export const projectTypes: ProjectType[] = [
   {
     id: 'experience',
     title: 'Experience Centres',
-    glyph: 'experience',
+    image: 'experience',
     sectors: ['Enterprise'],
     scope:
       'Showcase spaces that bring together display, audio and control technologies to present products and brand stories to visitors.',

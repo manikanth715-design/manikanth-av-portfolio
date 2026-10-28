@@ -22,11 +22,16 @@ const navFor: Record<string, string> = { design: 'projects', value: 'certificati
 export function Nav() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [progress, setProgress] = useState(0)
   const activeSection = useActiveSection(sectionIds)
   const active = navFor[activeSection] ?? activeSection
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24)
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24)
+      const max = document.documentElement.scrollHeight - window.innerHeight
+      setProgress(max > 0 ? window.scrollY / max : 0)
+    }
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
@@ -49,9 +54,14 @@ export function Nav() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled || open ? 'border-b border-line/70 bg-ink-950/85 backdrop-blur-md' : 'border-b border-transparent'
+        scrolled || open ? 'border-b border-line/70 bg-black/80 backdrop-blur-xl' : 'border-b border-transparent'
       }`}
     >
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 bottom-0 h-px origin-left bg-accent transition-transform duration-150"
+        style={{ transform: `scaleX(${progress})` }}
+      />
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:rounded-md focus:bg-ink-800 focus:px-3 focus:py-2 focus:text-sm"

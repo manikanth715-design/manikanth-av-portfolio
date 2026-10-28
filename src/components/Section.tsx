@@ -9,7 +9,7 @@ type SectionProps = {
 
 export function Section({ id, labelledBy, children, className = '' }: SectionProps) {
   return (
-    <section id={id} aria-labelledby={labelledBy} className={`relative py-24 md:py-32 ${className}`}>
+    <section id={id} aria-labelledby={labelledBy} className={`relative border-t border-white/[0.04] py-24 md:py-36 ${className}`}>
       <div className="container-x">{children}</div>
     </section>
   )

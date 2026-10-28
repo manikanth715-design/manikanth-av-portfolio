@@ -7,7 +7,7 @@ import { SectionHeading } from './SectionHeading'
 
 export function Projects() {
   return (
-    <Section id="projects" labelledBy="projects-title" className="bg-ink-900/40">
+    <Section id="projects" labelledBy="projects-title">
       <SectionHeading
         id="projects-title"
         index="04"
@@ -18,8 +18,8 @@ export function Projects() {
 
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {projectTypes.map((p, i) => (
-          <Reveal key={p.id} delay={(i % 3) * 80} className="h-full">
-            <ProjectCard project={p} index={i} />
+          <Reveal key={p.id} delay={(i % 3) * 90} className="h-full">
+            <ProjectCard project={p} />
           </Reveal>
         ))}
       </div>

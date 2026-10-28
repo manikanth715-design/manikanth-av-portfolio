@@ -27,7 +27,7 @@ export function ValueProposition() {
 
         <ol className="grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2">
           {valueProps.map((v, i) => (
-            <Reveal as="li" key={v.title} delay={(i % 2) * 80} className="group bg-ink-950 p-6 transition-colors hover:bg-ink-800 md:p-7">
+            <Reveal as="li" key={v.title} delay={(i % 2) * 80} className="group bg-black p-6 transition-colors duration-500 hover:bg-ink-800 md:p-7">
               <span className="font-mono text-xs text-accent">{String(i + 1).padStart(2, '0')}</span>
               <h3 className="mt-5 text-lg font-semibold leading-snug tracking-tight">{v.title}</h3>
               <p className="mt-2.5 text-[0.9rem] leading-relaxed text-muted">{v.body}</p>

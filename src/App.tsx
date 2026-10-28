@@ -6,6 +6,7 @@ import { Experience } from './components/Experience'
 import { Expertise } from './components/Expertise'
 import { Footer } from './components/Footer'
 import { Hero } from './components/Hero'
+import { ImageBand } from './components/ImageBand'
 import { Nav } from './components/Nav'
 import { Projects } from './components/Projects'
 import { ValueProposition } from './components/ValueProposition'
@@ -18,6 +19,12 @@ export default function App() {
         <Hero />
         <About />
         <Expertise />
+        <ImageBand
+          name="control"
+          eyebrow="Command & control"
+          title="Mission-critical visualisation, designed signal by signal."
+          items={['Video walls', 'AV-over-IP', 'Signal distribution', 'Operator control']}
+        />
         <Experience />
         <Projects />
         <DesignShowcase />

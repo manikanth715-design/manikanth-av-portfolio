@@ -1,12 +1,13 @@
 import { BadgeCheck, GraduationCap } from 'lucide-react'
 import { certifications, education } from '../data/resume'
+import { spotlight } from '../hooks/useSpotlight'
 import { Reveal } from './Reveal'
 import { Section } from './Section'
 import { SectionHeading } from './SectionHeading'
 
 export function Certifications() {
   return (
-    <Section id="certifications" labelledBy="certifications-title" className="bg-ink-900/40">
+    <Section id="certifications" labelledBy="certifications-title">
       <SectionHeading
         id="certifications-title"
         index="06"
@@ -18,8 +19,8 @@ export function Certifications() {
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {certifications.map((c, i) => (
           <Reveal key={c.issuer} delay={i * 70} className="h-full">
-            <article className="card card-hover flex h-full flex-col p-6">
-              <BadgeCheck size={20} aria-hidden="true" className="text-accent" />
+            <article className="card card-hover spotlight group flex h-full flex-col p-6" onMouseMove={spotlight}>
+              <BadgeCheck size={20} aria-hidden="true" className="text-accent transition-transform duration-500 group-hover:rotate-[360deg]" />
               <h3 className="mt-8 text-2xl font-semibold tracking-tight">{c.issuer}</h3>
               <p className="mt-1.5 text-sm text-muted">{c.name}</p>
             </article>

@@ -1,12 +1,13 @@
 import { expertise, oemGroups, spaces } from '../data/resume'
 import { ExpertiseCard } from './ExpertiseCard'
+import { Marquee } from './Marquee'
 import { Reveal } from './Reveal'
 import { Section } from './Section'
 import { SectionHeading } from './SectionHeading'
 
 export function Expertise() {
   return (
-    <Section id="expertise" labelledBy="expertise-title" className="bg-ink-900/40">
+    <Section id="expertise" labelledBy="expertise-title" >
       <SectionHeading
         id="expertise-title"
         index="02"
@@ -34,6 +35,10 @@ export function Expertise() {
         </ul>
       </Reveal>
 
+      <Reveal className="mt-20">
+        <Marquee items={oemGroups.flatMap((g) => g.brands)} />
+      </Reveal>
+
       <Reveal className="mt-16">
         <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
           <h3 className="eyebrow !text-muted">AV technology &amp; OEM exposure</h3>
@@ -46,7 +51,7 @@ export function Expertise() {
           {oemGroups.map((g, i) => (
             <div
               key={g.category}
-              className={`bg-ink-800/60 p-6 ${i > 0 ? 'border-t border-line sm:border-t-0' : ''} ${
+              className={`bg-ink-800/60 p-6 transition-colors duration-300 hover:bg-ink-700/60 ${i > 0 ? 'border-t border-line sm:border-t-0' : ''} ${
                 i % 2 === 1 ? 'sm:border-l' : ''
               } ${i > 1 ? 'sm:border-t lg:border-t-0' : ''} ${i > 0 ? 'lg:border-l' : ''} border-line`}
             >

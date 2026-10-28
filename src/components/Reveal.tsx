@@ -22,7 +22,7 @@ export function Reveal({ children, as: Tag = 'div', className = '', delay = 0 }:
           observer.disconnect()
         }
       },
-      { rootMargin: '0px 0px -8% 0px', threshold: 0.08 },
+      { rootMargin: '0px 0px -6% 0px', threshold: 0.05 },
     )
     observer.observe(el)
     return () => observer.disconnect()

@@ -52,7 +52,7 @@ export function Experience() {
               <div className="grid gap-5 md:grid-cols-2">
                 {job.groups.map((g, i) => (
                   <Reveal key={g.title} delay={(i % 2) * 90}>
-                    <article className="card h-full p-6">
+                    <article className="card card-hover h-full p-6">
                       <h4 className="flex items-center gap-3 font-mono text-[0.7rem] uppercase tracking-[0.16em] text-muted">
                         <span className="text-accent">{String(i + 1).padStart(2, '0')}</span>
                         {g.title}
